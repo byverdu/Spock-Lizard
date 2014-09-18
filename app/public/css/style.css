@@ -153,7 +153,7 @@ header h2 {
   font-size: 32px;
   top: 320px;
   left: 24%; }
-  #target img[id^="pick_"] {
+  #target .img_result {
     width: 80px;
     height: 80px; }
 

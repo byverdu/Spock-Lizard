@@ -64,11 +64,16 @@ jQuery(document).ready(function($) {
 			index_player   = arr.indexOf(player_pick)
 			index_opponent = arr.indexOf(opponent_pick)
 
-			player_img   = $('<img id="pick_'+ player_pick   +'" src="images/'+player_pick+'.png">')
-			opponent_img = $('<img id="pick_'+ opponent_pick +'" src="images/'+opponent_pick+'.png">')
+			player_img   = $('<img class="img_result" src="images/'+player_pick+'.png">'  )
+			opponent_img = $('<img class="img_result" src="images/'+opponent_pick+'.png">')
 
 			arr[index_player]   = player_img
 			arr[index_opponent] = opponent_img
+
+			$.each(arr, function(index) {
+
+				if(typeof arr[index] === 'string' ) arr[index] = ' '+arr[index]+' '
+			});
 
 			$('#target').append(arr)
 	};
