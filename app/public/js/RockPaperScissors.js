@@ -25,10 +25,12 @@ Player.prototype.picks = function(pick) {
 };
 
 Game.prototype._pickPlayer1 = function() {
+	console.log('new',this.player1.pick)
 	return this.player1.pick;
 }
 
 Game.prototype._pickPlayer2 = function() {
+	console.log(this.player2.pick)
 	return this.player2.pick;
 }
 
@@ -60,7 +62,7 @@ Game.prototype.displayMessage = function() {
 
 	verb = this.PAIRS[pick][opponent_pick]
 
-	return 'The '+this._pickPlayer1()+' '+this.winner().name+' '+verb+' the '+this._pickPlayer2()+' '+this.loser().name
+	return 'The '+pick+' '+this.winner().name+' '+verb+' the '+opponent_pick+' '+this.loser().name
 
 }
 
