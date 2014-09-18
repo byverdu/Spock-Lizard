@@ -1,0 +1,149 @@
+@import url(http://fonts.googleapis.com/css?family=Lobster);
+@import url(http://fonts.googleapis.com/css?family=Poiret+One);
+* {
+  margin: 0;
+  padding: 0; }
+
+/* @import */
+/* Variables */
+body {
+  background-image: url(/images/brushed.png);
+  font-family: "Poiret one", cursive; }
+
+.wrapper {
+  width: 900px;
+  margin: 18px auto;
+  position: relative; }
+
+header img {
+  position: relative; }
+  header img:first-child {
+    float: left; }
+  header img:last-child {
+    float: right;
+    top: -156px; }
+header .logo_img {
+  background-image: url(/images/logo_img.jpeg);
+  width: 100px;
+  height: 100px;
+  border: 5px solid grey;
+  border-radius: 50%; }
+header .head_logo {
+  text-align: center; }
+header h1 {
+  width: 790px;
+  font: 90px "Lobster";
+  color: #FFB800;
+  text-shadow: 2px 5px #63ADD0;
+  -webkit-text-stroke: 2px white; }
+  header h1 .char1 {
+    position: absolute;
+    left: 170px;
+    color: #086FA1;
+    transform: rotate(-27deg); }
+  header h1 .char14 {
+    position: absolute;
+    color: #086FA1;
+    transform: rotate(20deg); }
+  header h1 .char7 {
+    color: #086FA1; }
+header h2 {
+  font-size: 35px;
+  color: #086FA1;
+  text-shadow: 1px 2px #63ADD0; }
+  header h2 .char30 {
+    font-variant: small-caps;
+    color: #FFB800;
+    text-shadow: none; }
+
+.index img {
+  height: 300px;
+  box-shadow: 1px 1px 15px;
+  margin-left: 320px;
+  margin-top: 20px; }
+.index form {
+  width: 210px;
+  margin: 30px auto; }
+  .index form input {
+    width: 200px;
+    height: 40px;
+    text-align: center;
+    font-size: 20px;
+    box-shadow: 1px 1px 50px; }
+    .index form input:focus::-webkit-input-placeholder {
+      color: transparent; }
+  .index form button {
+    padding: 5%;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    background: rgba(255, 184, 0, 0.23);
+    border: 0;
+    font-size: 15px;
+    margin: 20px 35%;
+    cursor: -webkit-grabbing; }
+    .index form button:hover {
+      border: 2px solid #086FA1;
+      background: rgba(255, 184, 0, 0.5);
+      color: white; }
+
+.game_page h1 {
+  font-size: 36px;
+  text-shadow: 1px 2px #63ADD0; }
+  .game_page h1 span {
+    font-size: 40px; }
+.game_page form:not(.form1) button[value="spock"] {
+  background-image: url(/images/spock.png);
+  background-size: 200px 200px;
+  margin-left: -24px; }
+.game_page form:not(.form1) button[value="lizard"] {
+  background-image: url(/images/lizard.png);
+  background-size: 200px 200px; }
+.game_page form:not(.form1) button[value="rock"] {
+  background-image: url(/images/rock.png);
+  background-size: 200px 200px;
+  float: left;
+  position: relative;
+  top: 211px;
+  left: 317px; }
+.game_page form:not(.form1) button[value="paper"] {
+  background-image: url(/images/paper.png);
+  background-size: 200px 200px;
+  float: right; }
+.game_page form:not(.form1) button[value="scissors"] {
+  background-image: url(/images/scissors.png);
+  background-size: 200px 200px; }
+.game_page form:not(.form1) .game_img {
+  margin: 10px 30px;
+  width: 190px;
+  height: 190px;
+  border-radius: 25%;
+  border: 3px solid black;
+  -webkit-filter: grayscale(0.7) invert(1) sepia(0.4); }
+  .game_page form:not(.form1) .game_img:hover {
+    -webkit-filter: grayscale(0) invert(0) sepia(0);
+    cursor: -webkit-grabbing; }
+
+.result .submit_btn {
+  padding: 5%;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  background: rgba(255, 184, 0, 0.23);
+  border: 0;
+  font-size: 15px;
+  margin: 20px 35%;
+  cursor: -webkit-grabbing;
+  padding: 0; }
+  .result .submit_btn:hover {
+    border: 2px solid #086FA1;
+    background: rgba(255, 184, 0, 0.5);
+    color: white; }
+  .result .submit_btn[value="Play again?"] {
+    float: left; }
+  .result .submit_btn[value="New Player?"] {
+    float: right;
+    position: relative;
+    top: -110px; }
+
+/*# sourceMappingURL=style.css.map */

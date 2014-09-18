@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Spock-Lizard</title>
+
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+ 			
+	<div class="wrapper" data-wrap="wrap"> <!-- to target elements without #id for if someone changes it -->
+	
+	<!-- var lol = $(this).data('wrap') -->
+		<header>
+			<img src="/images/logo_img.jpeg" class="logo_img" alt="logo image">
+				<h1 class="head_logo">Spock & Lizard</h1> <h2 class="head_logo">with the usual suspects <% if session["user"]  %> and <%= session["user"] %> <%end%></h2>
+			<img src="/images/logo_img.jpeg" class="logo_img" alt="logo image">
+		</header>
+		
+		<%= yield %>
+
+	</div>
+	
+	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script src="js/RockPaperScissors.js"></script>
+	<script src="js/game.js"></script>
+	<script src="js/letter.js"></script>
+</body>
+</html>
