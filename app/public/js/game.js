@@ -64,8 +64,8 @@ jQuery(document).ready(function($) {
 			index_player   = arr.indexOf(player_pick)
 			index_opponent = arr.indexOf(opponent_pick)
 
-			player_img   = $('<img class="img_result" src="images/'+player_pick+'.png">'  )
-			opponent_img = $('<img class="img_result" src="images/'+opponent_pick+'.png">')
+			player_img   = $('<img class="img_result" src="images/'+player_pick+'.jpg">'  )
+			opponent_img = $('<img class="img_result" src="images/'+opponent_pick+'.jpg">')
 
 			arr[index_player]   = player_img
 			arr[index_opponent] = opponent_img

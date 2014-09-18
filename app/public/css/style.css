@@ -93,25 +93,25 @@ header h2 {
   .game_page h1 span {
     font-size: 40px; }
 .game_page form:not(.form1) button[value="spock"] {
-  background-image: url(/images/spock.png);
+  background-image: url(/images/spock.jpg);
   background-size: 200px 200px;
   margin-left: -24px; }
 .game_page form:not(.form1) button[value="lizard"] {
-  background-image: url(/images/lizard.png);
+  background-image: url(/images/lizard.jpg);
   background-size: 200px 200px; }
 .game_page form:not(.form1) button[value="rock"] {
-  background-image: url(/images/rock.png);
+  background-image: url(/images/rock.jpg);
   background-size: 200px 200px;
   float: left;
   position: relative;
   top: 211px;
   left: 317px; }
 .game_page form:not(.form1) button[value="paper"] {
-  background-image: url(/images/paper.png);
+  background-image: url(/images/paper.jpg);
   background-size: 200px 200px;
   float: right; }
 .game_page form:not(.form1) button[value="scissors"] {
-  background-image: url(/images/scissors.png);
+  background-image: url(/images/scissors.jpg);
   background-size: 200px 200px; }
 .game_page form:not(.form1) .game_img {
   margin: 10px 30px;

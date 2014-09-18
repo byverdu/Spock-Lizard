@@ -148,15 +148,15 @@ header{
 
 	form:not(.form1){
 
-		button[value="spock"] { background-image: url(/images/spock.png); background-size: 200px 200px;margin-left: -24px;  }
+		button[value="spock"] { background-image: url(/images/spock.jpg); background-size: 200px 200px;margin-left: -24px;  }
 
-		button[value="lizard"]{ background-image: url(/images/lizard.png); background-size: 200px 200px  }
+		button[value="lizard"]{ background-image: url(/images/lizard.jpg); background-size: 200px 200px  }
 
-		button[value="rock"]  { background-image: url(/images/rock.png); background-size: 200px 200px; float: left;position: relative;top: 211px;left: 317px; }
+		button[value="rock"]  { background-image: url(/images/rock.jpg); background-size: 200px 200px; float: left;position: relative;top: 211px;left: 317px; }
 
-		button[value="paper"] { background-image: url(/images/paper.png); background-size: 200px 200px; float: right;  }
+		button[value="paper"] { background-image: url(/images/paper.jpg); background-size: 200px 200px; float: right;  }
 
-		button[value="scissors"]{ background-image: url(/images/scissors.png); background-size: 200px 200px  }
+		button[value="scissors"]{ background-image: url(/images/scissors.jpg); background-size: 200px 200px  }
 
 		.game_img{
 				margin: 10px 30px;
