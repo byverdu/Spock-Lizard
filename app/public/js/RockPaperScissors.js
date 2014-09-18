@@ -1,3 +1,5 @@
+
+
 function Player(name) {
   this.name = name;
 }
@@ -7,12 +9,6 @@ function Game(player1, player2) {
   this.player2 = player2;
 }
 
-// rock:     { scissors: 'crushes', lizard: 'squashes' },
-//   paper:    { rock: 'covers', spock: 'disproves' },
-//   scissors: { paper: 'cuts', lizard: 'decapitates' },
-//   lizard:   { spock: 'poisons', paper: 'eats' },
-//   spock:    { rock: 'vaporises', scissors: 'smashes' }
-
 Game.prototype.PAIRS = {rock:     { scissors: "crushes", lizard: "squashes"   },
 											  paper:    { rock: "covers", spock: "disproves"     },
 											  scissors: { paper: "cut", lizard: "decapitate"     },
@@ -20,52 +16,52 @@ Game.prototype.PAIRS = {rock:     { scissors: "crushes", lizard: "squashes"   },
 											  spock:    { rock: "vaporizes", scissors: "smashes" }
 												}	
 
+
+
 // Picking 
 
 Player.prototype.picks = function(pick) {
 	this.pick = pick
 };
 
+Game.prototype._pickPlayer1 = function() {
+	return this.player1.pick;
+}
+
+Game.prototype._pickPlayer2 = function() {
+	return this.player2.pick;
+}
+
 // Determine who is the winner
 
-Game.prototype._isWinner = function(pick,opponent_pick) {
+Game.prototype._isWinner = function() {
 	
-	pick          = this.player1.pick;
-	opponent_pick = this.player2.pick;
-	
-	return this.PAIRS[pick][opponent_pick]
+	return this.PAIRS[this._pickPlayer1()][this._pickPlayer2()]
 }
 
 // Comparing same pick
 
 Game.prototype._isSamePick = function() {
 
-	return this.player1.pick === this.player2.pick;
+	return this._pickPlayer1() === this._pickPlayer2()
 }
 
 
 // Displaying message
 
-Game.prototype.displayMessage = function(pick,opponent_pick) {
+Game.prototype.displayMessage = function() {
 
-	var message = '' , verb;
+	var pick, opponent_pick;
 
-	pick          = this.player1.pick
-	opponent_pick = this.player2.pick
-
-	console.log('server--pick-->',pick,'op_pic-->',opponent_pick)
+	if(!this.winner()) return 'Draw'
+	
+	pick          = this.winner().pick
+	opponent_pick = this.loser().pick
 
 	verb = this.PAIRS[pick][opponent_pick]
 
-	console.log(verb,pick,'opponent_pick',opponent_pick)
+	return 'The '+this._pickPlayer1()+' '+this.winner().name+' '+verb+' the '+this._pickPlayer2()+' '+this.loser().name
 
-	if (this.winner()){
-
-		message += 'The '+pick+' '+this.player1.name+' '+verb+' the '+opponent_pick+' '+this.player2.name
-	
-	} else message += 'Draws'
-
-	return message 
 }
 
 
@@ -96,5 +92,8 @@ Game.prototype.winner = function() {
 	}else return this.player2;
 }
 
+Game.prototype.loser = function() {
+	return this.winner() == this.player1 ? this.player2 : this.player1;
+}
 
 

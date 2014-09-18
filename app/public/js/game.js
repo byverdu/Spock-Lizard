@@ -9,31 +9,22 @@ jQuery(document).ready(function($) {
 		$('.index button').show('slow')
 	});
 
-	
-
 	$('.index button').on('click',function(){
 	
 		var data, name;
 
-		data     = $(".index form").serialize();
+		data  = $(".index form").serialize();
 
-		name     = data.split('=').pop();
-
-		console.log('name-->',name)
-
-
+		name  = data.split('=').pop();
+		
 		sessionStorage.setItem('name',  JSON.stringify(name))
-		//sessionStorage.setItem('opponent',JSON.stringify(opponent))
-		//sessionStorage.setItem('game',    JSON.stringify(game))
 	})
 
 	if(window.location.reload && window.location.href.split('9292').pop() === '/game'){
 
-		var game, player, opponent;
+		var game, player, opponent, img_pick, player_img, opponent_img;
 
 		name   = JSON.parse(sessionStorage.getItem('name'));
-		//opponent = JSON.parse(sessionStorage.getItem('opponent'))
-		//game     = JSON.parse(sessionStorage.getItem('game'))
 
 		player   = new Player(name);
 
@@ -43,47 +34,61 @@ jQuery(document).ready(function($) {
 		
 		$('form:last button').click(function(){
 
-			var img_pick = '';
-
-			img_pick += $(this).attr('value')
-
-			
+			img_pick = $(this).attr('value')
 
 			player.picks(img_pick)
 			opponent.picks(game.randomPick())
 
-			game.winner()
+			player_img   = $('<img class="img_reult" src="images/'+player.pick+'.png">')
+			opponent_img = $('<img class="img_reult" src="images/'+opponent.pick+'.png">')
 
-			console.log('game--pick-->',img_pick,'op_pic-->',opponent.pick)
+			game.winner()
 
 			message = game.displayMessage();
 
-			sessionStorage.setItem('message', JSON.stringify(message))
+			arr = message.split(' ');
 
-			
-			console.log(game.winner())
+			var index_player   = arr.indexOf(player.pick)
+			var index_opponent = arr.indexOf(opponent.pick)
 
-			//console.log(game.displayMessage())
+			arr[index_player]   = player_img
+			arr[index_opponent] = opponent_img
+
+			console.log(player_img)
+
+			sessionStorage.setItem('message', arr);
+			// sessionStorage.setItem('player', JSON.stringify(player.pick));
+			// sessionStorage.setItem('opponent', JSON.stringify(opponent.pick));
+
+			console.log(message)
+
+			console.log('server',player.pick)
+
+			//result = message.split(' ')
+
+			console.log(arr)
 
 		})
 	}
 
 	if (window.location.reload && window.location.href.split('9292').pop() === '/result') {
 
+			var message, player, render_result;
 
-			message = JSON.parse(sessionStorage.getItem('message'));
+			message = sessionStorage.getItem('message');
+			//player = JSON.parse(sessionStorage.getItem('player'));
 
-			$('#target').text(message)
+			render_result = $('#target');
+
+			render_result.text(message)
+
+			//render_result.append()
+
+			//console.log('client',player)
+
+			console.log(message)
+
 	};
 
 	
 });
-
-
-// $("#submit_button").click(function() {
-//     var data = $("#my_form").serialize();
-//     data += data.length ? "&" : ""; // check if empty
-//     data += escape($(this).attr("name"))+"="+escape($(this).val());
-//     // ...
-//     return false;
-// });
