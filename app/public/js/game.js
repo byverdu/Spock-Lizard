@@ -20,7 +20,7 @@ jQuery(document).ready(function($) {
 		sessionStorage.setItem('name',  JSON.stringify(name))
 	})
 
-	if(window.location.reload && window.location.href.split('9292').pop() === '/game'){
+	if(window.location.reload && window.location.href.split('/').pop() === 'game'){
 
 		var game, player, opponent;
 
@@ -50,7 +50,7 @@ jQuery(document).ready(function($) {
 		})
 	}
 
-	if (window.location.reload && window.location.href.split('9292').pop() === '/result') {
+	if (window.location.reload && window.location.href.split('/').pop() === 'result') {
 
 			var message, player_pick, opponent_pick, arr, index_player, index_opponent, player_img, opponent_img;
 
