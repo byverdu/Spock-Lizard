@@ -186,6 +186,23 @@ header{
 		&[value="New Player?"]{ float: right; position: relative; top: -110px; }
 	}
 
+
+}
+
+#target{
+
+	border: 1px solid;
+	position: absolute;
+	width: 650px;
+	font-size: 32px;
+	top: 320px;
+	left: 24%; 
+
+	img[id^="pick_"]{
+		width: 80px;
+		height: 80px;
+	}
+
 }
 
 

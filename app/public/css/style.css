@@ -146,4 +146,15 @@ header h2 {
     position: relative;
     top: -110px; }
 
+#target {
+  border: 1px solid;
+  position: absolute;
+  width: 650px;
+  font-size: 32px;
+  top: 320px;
+  left: 24%; }
+  #target img[id^="pick_"] {
+    width: 80px;
+    height: 80px; }
+
 /*# sourceMappingURL=style.css.map */
