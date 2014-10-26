@@ -41,12 +41,6 @@ feature "During the game" do
 		expect(current_path).to eq('/result')
 	end
 
-	scenario "On the result page" do
-
-		visit '/result'
-
-		expect(page).to have_content('The lizard Albert poisons the Spock Marla')
-	end
 
 	scenario "You can play again" do
 		visit 'result'
