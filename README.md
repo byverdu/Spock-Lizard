@@ -1,5 +1,5 @@
 #Rock Paper Scissors Spock Lizard
-																		
+													
 Rock-paper-scissors-lizard-Spock is an expansion of the classic selection method game rock-paper-scissors. It operates on the same basic principle, but includes two additional weapons: the lizard and Spock
 
 ### Technologies used
